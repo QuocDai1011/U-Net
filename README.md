@@ -33,13 +33,13 @@ Dự án này tập trung vào bài toán **Image Segmentation** trong lĩnh v�
 conda create -n unet_env python=3.9.24
 conda activate unet_env
 
-🔹 3.2 Cài PyTorch + CUDA (khuyến nghị)
+### 🔹 3.2 Cài PyTorch + CUDA (khuyến nghị)
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
-🔹 3.3 Cài các thư viện còn lại
+### 🔹 3.3 Cài các thư viện còn lại
 pip install opencv-python matplotlib numpy tqdm
 
-📁 4. Cấu trúc thư mục
+# 📁 4. Cấu trúc thư mục
 txt
 Copy code
 dataset/
@@ -60,7 +60,7 @@ Tên file trong images/ và masks/ phải trùng nhau.
 Ví dụ:
 images/tooth01.jpg  ↔  masks/tooth01.png
 
-🧹 5. Tiền xử lý ảnh
+# 🧹 5. Tiền xử lý ảnh
 Dự án sử dụng các kỹ thuật:
 Resize 256×256
 Chuyển RGB
@@ -71,7 +71,7 @@ HorizontalFlip
 RandomRotation
 ColorJitter
 
-🧠 6. Huấn luyện mô hình
+# 🧠 6. Huấn luyện mô hình
 Thông số	Giá trị
 Epoch	150
 Loss	BCE
@@ -79,7 +79,8 @@ Optimizer	Adam
 Learning rate	1e-4
 Batch size	2
 
-▶️ 7. Chạy huấn luyện
+# ▶️ 7. Chạy huấn luyện
 python train_mouth_unet.py
-🔍 8. Chạy dự đoán
+
+# 🔍 8. Chạy dự đoán
 python test_mouth_unet.py
