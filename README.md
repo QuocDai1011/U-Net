@@ -1,1 +1,90 @@
-# U-Net
+# 🦷 Mouth Segmentation using U-Net / U-Net++
+Dự án sử dụng mô hình **U-Net** và **U-Net++** để phân đoạn khoang miệng từ ảnh nha khoa, tạo ra **mask nhị phân** để nhận diện vùng miệng.
+
+---
+
+# 📌 1. Giới thiệu
+Dự án này tập trung vào bài toán **Image Segmentation** trong lĩnh vực nha khoa — tách khoang miệng bằng **U-Net / U-Net++**.
+
+Pipeline thực hiện:
+
+- Tiền xử lý ảnh  
+- Huấn luyện mô hình U-Net  
+- Dự đoán → tạo mask nhị phân  
+- Hiển thị kết quả (Before → Mask → Overlay)
+
+---
+
+# 🛠️ 2. Công nghệ sử dụng
+
+| Thành phần  | Phiên bản              |
+| ----------- | ---------------------- |
+| Python      | 3.9.24                 |
+| PyTorch     | GPU (CUDA)             |
+| CUDA        | Optional (khuyến nghị) |
+| OpenCV      | Latest                 |
+| Anaconda    | Tạo môi trường         |
+| torchvision | Data transforms        |
+
+---
+
+# ⚙️ 3. Cài đặt môi trường
+
+## 🔹 3.1 Tạo môi trường bằng Conda
+```bash
+conda create -n unet_env python=3.9.24
+conda activate unet_env
+## 🔹 3.2 Cài PyTorch + CUDA (khuyến nghị)
+bash
+Copy code
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+## 🔹 3.3 Cài các thư viện còn lại
+bash
+Copy code
+pip install opencv-python matplotlib numpy tqdm
+# 📁 4. Cấu trúc thư mục
+txt
+Copy code
+dataset/
+   images/
+   masks/
+   test_image/
+   result_test_mouth/
+
+models/
+   unet_model.py
+   unetpp_model.py
+
+train_mouth_unet.py
+test_mouth_unet.py
+README.md
+## Lưu ý:
+Tên file trong images/ và masks/ phải trùng nhau.
+
+Ví dụ:
+images/tooth01.jpg  ↔  masks/tooth01.png
+
+# 🧹 5. Tiền xử lý ảnh
+Dự án sử dụng các kỹ thuật:
+Resize 256×256
+Chuyển RGB
+CLAHE (tăng độ tương phản)
+Giảm nhiễu Gaussian
+Augmentation:
+HorizontalFlip
+RandomRotation
+ColorJitter
+
+# 🧠 6. Huấn luyện mô hình
+Thông số	Giá trị
+Epoch	150
+Loss	BCE
+Optimizer	Adam
+LR	1e-4
+Batch size	2 (hoặc tùy máy)
+
+# ▶️ 7. Chạy huấn luyện
+python train_mouth_unet.py
+
+# 🔍 8. Chạy dự đoán
+python test_mouth_unet.py
