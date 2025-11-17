@@ -42,22 +42,36 @@ pip install opencv-python matplotlib numpy tqdm
 ---
 
 # 📁 4. Cấu trúc thư mục
-txt
-Copy code
-dataset/
-   images/
-   masks/
-   test_image/
-   result_test_mouth/
+your_project/
+│
+├── dataset/
+│   ├── images/              # Chứa ảnh gốc (jpg, png...)
+│   │      image01.jpg
+│   │      image02.jpg
+│   │      ...
+│   │
+│   ├── masks/               # Chứa ảnh mask nhị phân 0–255
+│   │      image01.png       # Tên phải trùng với ảnh gốc
+│   │      image02.png
+│   │      ...
+│   │
+│   ├── test_image/          # Ảnh bạn muốn test mô hình
+│   │      test01.jpg
+│   │      test02.jpg
+│   │      ...
+│   │
+│   └── result_test_mouth/   # Nơi lưu ảnh kết quả dự đoán
+│          (tự động tạo khi chạy code hoặc tự tạo sẵn)
+│
+├── models/
+│   ├── unet_model.py
+│   └── unetpp_model.py
+│
+├── train_mouth_unet.py
+├── test_mouth_unet.py
+└── README.md
 
-models/
-   unet_model.py
-   unetpp_model.py
-
-train_mouth_unet.py
-test_mouth_unet.py
-README.md
-🔸 Lưu ý:
+### 🔸 Lưu ý:
 Tên file trong images/ và masks/ phải trùng nhau.
 Ví dụ:
 images/tooth01.jpg  ↔  masks/tooth01.png
