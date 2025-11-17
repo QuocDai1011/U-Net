@@ -8,7 +8,7 @@ from unet_model import UNet
 # ======= 1. Cấu hình =======
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 MODEL_PATH = "unet_mouth_trained.pth"
-IMAGE_PATH = "data/test_image/thumb.jpg"  # ảnh test
+IMAGE_PATH = "data/test_image/ham-rang-that-test.jpg"  # ảnh test
 OUTPUT_MASK_PATH = "data/result-test-mouth/result_mask.png"
 OUTPUT_OVERLAY_PATH = "data/result-test-mouth/result_overlay.png"
 

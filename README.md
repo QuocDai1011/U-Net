@@ -20,6 +20,7 @@ Dự án này tập trung vào bài toán **Image Segmentation** trong lĩnh v�
 | ----------- | ---------------------- |
 | Python      | 3.9.24                 |
 | PyTorch     | GPU (CUDA)             |
+| PyCharm     | 2025.2.4               |
 | CUDA        | Optional (khuyến nghị) |
 | OpenCV      | Latest                 |
 | Anaconda    | Tạo môi trường         |
