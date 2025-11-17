@@ -82,7 +82,7 @@ criterion = nn.BCEWithLogitsLoss()
 optimizer = optim.Adam(model.parameters(), lr=1e-4)
 
 # === Huấn luyện ===
-for epoch in range(150):
+for epoch in range(200):
     model.train()
     total_loss = 0
     for imgs, masks in dataloader:
@@ -95,7 +95,7 @@ for epoch in range(150):
         optimizer.step()
         total_loss += loss.item()
 
-    print(f"Epoch [{epoch+1}/150] - Loss: {total_loss/len(dataloader):.4f}")
+    print(f"Epoch [{epoch+1}/200] - Loss: {total_loss/len(dataloader):.4f}")
 
 torch.save(model.state_dict(), "unet_mouth_trained_preprocessed.pth")
 print("✅ Đã huấn luyện xong và lưu model: unet_mouth_trained_preprocessed.pth")
