@@ -42,34 +42,8 @@ pip install opencv-python matplotlib numpy tqdm
 ---
 
 # 📁 4. Cấu trúc thư mục
-your_project/
-│
-├── dataset/
-│   ├── images/
-│   │      image01.jpg
-│   │      image02.jpg
-│   │      ...
-│   │
-│   ├── masks/
-│   │      image01.png
-│   │      image02.png
-│   │      ...
-│   │
-│   ├── test_image/
-│   │      test01.jpg
-│   │      test02.jpg
-│   │      ...
-│   │
-│   └── result_test_mouth/
-│          (tự động tạo khi chạy code hoặc tự tạo sẵn)
-│
-├── models/
-│   ├── unet_model.py
-│   └── unetpp_model.py
-│
-├── train_mouth_unet.py
-├── test_mouth_unet.py
-└── README.md
+<img width="578" height="893" alt="image" src="https://github.com/user-attachments/assets/1a66c095-3297-4560-8476-1d8381a3eb6d" />
+
 
 ### 🔸 Lưu ý:
 Tên file trong images/ và masks/ phải trùng nhau.
