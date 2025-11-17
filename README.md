@@ -39,6 +39,8 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 ### 🔹 3.3 Cài các thư viện còn lại
 pip install opencv-python matplotlib numpy tqdm
 
+---
+
 # 📁 4. Cấu trúc thư mục
 txt
 Copy code
@@ -60,6 +62,8 @@ Tên file trong images/ và masks/ phải trùng nhau.
 Ví dụ:
 images/tooth01.jpg  ↔  masks/tooth01.png
 
+---
+
 # 🧹 5. Tiền xử lý ảnh
 Dự án sử dụng các kỹ thuật:
 Resize 256×256
@@ -71,6 +75,8 @@ HorizontalFlip
 RandomRotation
 ColorJitter
 
+---
+
 # 🧠 6. Huấn luyện mô hình
 Thông số	Giá trị
 Epoch	150
@@ -79,8 +85,12 @@ Optimizer	Adam
 Learning rate	1e-4
 Batch size	2
 
+---
+
 # ▶️ 7. Chạy huấn luyện
 python train_mouth_unet.py
+
+---
 
 # 🔍 8. Chạy dự đoán
 python test_mouth_unet.py
