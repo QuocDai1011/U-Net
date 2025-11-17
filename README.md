@@ -15,7 +15,7 @@ Dự án này tập trung vào bài toán **Image Segmentation** trong lĩnh v�
 ---
 
 ## 🛠️ 2. Công nghệ sử dụng
-
+```
 | Thành phần  | Phiên bản              |
 | ----------- | ---------------------- |
 | Python      | 3.9.24                 |
@@ -24,7 +24,7 @@ Dự án này tập trung vào bài toán **Image Segmentation** trong lĩnh v�
 | OpenCV      | Latest                 |
 | Anaconda    | Tạo môi trường         |
 | torchvision | Data transforms        |
-
+```
 ---
 
 ## ⚙️ 3. Cài đặt môi trường
@@ -53,6 +53,7 @@ images/tooth01.jpg  ↔  masks/tooth01.png
 ---
 
 # 🧹 5. Tiền xử lý ảnh
+```
 Dự án sử dụng các kỹ thuật:
 Resize 256×256
 Chuyển RGB
@@ -62,17 +63,18 @@ Data Augmentation:
 HorizontalFlip
 RandomRotation
 ColorJitter
-
+```
 ---
 
 # 🧠 6. Huấn luyện mô hình
+```
 Thông số	Giá trị
 Epoch	150
 Loss	BCE
 Optimizer	Adam
 Learning rate	1e-4
 Batch size	2
-
+```
 ---
 
 # ▶️ 7. Chạy huấn luyện
