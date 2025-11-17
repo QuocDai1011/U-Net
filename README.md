@@ -45,22 +45,22 @@ pip install opencv-python matplotlib numpy tqdm
 your_project/
 │
 ├── dataset/
-│   ├── images/              # Chứa ảnh gốc (jpg, png...)
+│   ├── images/
 │   │      image01.jpg
 │   │      image02.jpg
 │   │      ...
 │   │
-│   ├── masks/               # Chứa ảnh mask nhị phân 0–255
-│   │      image01.png       # Tên phải trùng với ảnh gốc
+│   ├── masks/
+│   │      image01.png
 │   │      image02.png
 │   │      ...
 │   │
-│   ├── test_image/          # Ảnh bạn muốn test mô hình
+│   ├── test_image/
 │   │      test01.jpg
 │   │      test02.jpg
 │   │      ...
 │   │
-│   └── result_test_mouth/   # Nơi lưu ảnh kết quả dự đoán
+│   └── result_test_mouth/
 │          (tự động tạo khi chạy code hoặc tự tạo sẵn)
 │
 ├── models/
