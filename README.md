@@ -3,19 +3,18 @@ Dự án sử dụng mô hình **U-Net** và **U-Net++** để phân đoạn kho
 
 ---
 
-# 📌 1. Giới thiệu
+## 📌 1. Giới thiệu
 Dự án này tập trung vào bài toán **Image Segmentation** trong lĩnh vực nha khoa — tách khoang miệng bằng **U-Net / U-Net++**.
 
-Pipeline thực hiện:
-
+### Pipeline gồm 4 bước:
 - Tiền xử lý ảnh  
-- Huấn luyện mô hình U-Net  
+- Huấn luyện mô hình  
 - Dự đoán → tạo mask nhị phân  
 - Hiển thị kết quả (Before → Mask → Overlay)
 
 ---
 
-# 🛠️ 2. Công nghệ sử dụng
+## 🛠️ 2. Công nghệ sử dụng
 
 | Thành phần  | Phiên bản              |
 | ----------- | ---------------------- |
@@ -28,21 +27,19 @@ Pipeline thực hiện:
 
 ---
 
-# ⚙️ 3. Cài đặt môi trường
+## ⚙️ 3. Cài đặt môi trường
 
-## 🔹 3.1 Tạo môi trường bằng Conda
-```bash
+### 🔹 3.1 Tạo môi trường bằng Conda
 conda create -n unet_env python=3.9.24
 conda activate unet_env
-## 🔹 3.2 Cài PyTorch + CUDA (khuyến nghị)
-bash
-Copy code
+
+🔹 3.2 Cài PyTorch + CUDA (khuyến nghị)
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-## 🔹 3.3 Cài các thư viện còn lại
-bash
-Copy code
+
+🔹 3.3 Cài các thư viện còn lại
 pip install opencv-python matplotlib numpy tqdm
-# 📁 4. Cấu trúc thư mục
+
+📁 4. Cấu trúc thư mục
 txt
 Copy code
 dataset/
@@ -58,33 +55,31 @@ models/
 train_mouth_unet.py
 test_mouth_unet.py
 README.md
-## Lưu ý:
+🔸 Lưu ý:
 Tên file trong images/ và masks/ phải trùng nhau.
-
 Ví dụ:
 images/tooth01.jpg  ↔  masks/tooth01.png
 
-# 🧹 5. Tiền xử lý ảnh
+🧹 5. Tiền xử lý ảnh
 Dự án sử dụng các kỹ thuật:
 Resize 256×256
 Chuyển RGB
 CLAHE (tăng độ tương phản)
 Giảm nhiễu Gaussian
-Augmentation:
+Data Augmentation:
 HorizontalFlip
 RandomRotation
 ColorJitter
 
-# 🧠 6. Huấn luyện mô hình
+🧠 6. Huấn luyện mô hình
 Thông số	Giá trị
 Epoch	150
 Loss	BCE
 Optimizer	Adam
-LR	1e-4
-Batch size	2 (hoặc tùy máy)
+Learning rate	1e-4
+Batch size	2
 
-# ▶️ 7. Chạy huấn luyện
+▶️ 7. Chạy huấn luyện
 python train_mouth_unet.py
-
-# 🔍 8. Chạy dự đoán
+🔍 8. Chạy dự đoán
 python test_mouth_unet.py
