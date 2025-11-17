@@ -30,14 +30,19 @@ Dự án này tập trung vào bài toán **Image Segmentation** trong lĩnh v�
 ## ⚙️ 3. Cài đặt môi trường
 
 ### 🔹 3.1 Tạo môi trường bằng Conda
+```
 conda create -n unet_env python=3.9.24
 conda activate unet_env
+```
 
 ### 🔹 3.2 Cài PyTorch + CUDA (khuyến nghị)
+```
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-
+```
 ### 🔹 3.3 Cài các thư viện còn lại
+```
 pip install opencv-python matplotlib numpy tqdm
+```
 
 ---
 
@@ -78,9 +83,12 @@ Batch size	2
 ---
 
 # ▶️ 7. Chạy huấn luyện
+```
 python train_mouth_unet.py
-
+```
 ---
 
 # 🔍 8. Chạy dự đoán
+```
 python test_mouth_unet.py
+```
